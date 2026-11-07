@@ -23,16 +23,18 @@ class BankAccount:
             raise ValueError("Insufficient funds!!Try a lower amount")
 
         self.balance-=amount
+        self.amount -= amount
         print(f"You have withdrawn sh{amount} from {self.bankName} account for Account No: {self.accountNo}")
-
+        print(f"You're left with ksh{self.amount}")
         return self.balance
 
 
     def deposit(self,amount):
 
         self.balance+=amount
+        self.amount-=amount
         print(f"You have deposited sh{amount} to {self.bankName} account for Account No: {self.accountNo}")
-
+        print(f"You're left with ksh{self.amount}")
         return self.balance
 
     @abstractmethod
